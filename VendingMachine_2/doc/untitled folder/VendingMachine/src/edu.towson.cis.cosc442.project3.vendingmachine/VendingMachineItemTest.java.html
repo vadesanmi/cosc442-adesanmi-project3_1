@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>VendingMachineItemTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">VendingMachine (Mar 18, 2016 10:34:17 AM)</a> &gt; <a href="../../index.html" class="el_group">VendingMachine</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">edu.towson.cis.cosc442.project3.vendingmachine</a> &gt; <span class="el_source">VendingMachineItemTest.java</span></div><h1>VendingMachineItemTest.java</h1><pre class="source lang-java linenums">package edu.towson.cis.cosc442.project3.vendingmachine;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+<span class="fc" id="L11">public class VendingMachineItemTest {</span>
+	
+	VendingMachineItem item1,item2,item3;
+	
+	
+	@Before
+	public void setUp(){
+<span class="fc" id="L18">		item1 = new VendingMachineItem(&quot;Honey Bun&quot;,1.75);</span>
+<span class="fc" id="L19">		item2 = new VendingMachineItem(&quot;Reese's&quot;, 1.00);</span>
+			
+<span class="fc" id="L21">	}</span>
+	
+	
+	@Test(expected = VendingMachineException.class)
+	public void VendingMachine_1(){
+<span class="nc" id="L26">		item3 = new VendingMachineItem(&quot;Cookies&quot;, -1);</span>
+
+			
+<span class="nc" id="L29">	}</span>
+	
+	/**
+	 * Test for name.
+	 */
+	@Test
+	public void getNameTest() {
+<span class="fc" id="L36">		assertEquals(&quot;Honey Bun&quot;, item1.getName());</span>
+<span class="fc" id="L37">		assertEquals(&quot;Reese's&quot;, item2.getName());</span>
+<span class="fc" id="L38">	}</span>
+	
+	/**
+	 * Test for prices
+	 */
+	@Test
+	public void getPriceTest(){
+<span class="fc" id="L45">		assertEquals(1.75, item1.getPrice(), .01);</span>
+<span class="fc" id="L46">		assertEquals(1.00, item2.getPrice(), .01);</span>
+<span class="fc" id="L47">	}</span>
+	
+	
+	/**
+	 * Testing for price less than 0
+	 */
+
+	
+	
+	/**
+	 * Tear down.
+	 */
+	@After
+	public void tearDown(){
+<span class="fc" id="L61">		item1 = null;</span>
+<span class="fc" id="L62">		item2 = null;</span>
+<span class="fc" id="L63">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>VendingMachine (Mar 18, 2016 10:34:17 AM)</div></body></html>
